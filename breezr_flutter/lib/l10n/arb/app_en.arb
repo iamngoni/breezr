@@ -1,3 +1,15 @@
 {
-  "@@locale": "en"
+  "@@locale": "en",
+  "onboarding_chooseYourLanguage": "Choose your language",
+  "@onboarding_chooseYourLanguage": {
+    "description": "Choose your language label"
+  },
+  "onboarding_permissionsTitle": "Permissions",
+  "@onboarding_permissionsTitle": {
+    "description": "Permissions"
+  },
+  "onboarding_permissionsMsg": "Breezr needs access to your file system to scan caches and the Trash folder. macOS will ask you for permission on the next screen.",
+  "@onboarding_permissionsMsg": {
+    "description": "Breezr permissions awareness message"
+  }
 }

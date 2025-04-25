@@ -6,10 +6,15 @@
 //  Copyright (c) 2025 Codecraft Solutions.
 //
 
+import 'dart:developer';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 import '../../../core/models/data/language.dart';
+import '../../../core/state/locale/locale_bloc.dart';
 import '../../../core/utils/services.dart';
+import '../../../l10n/l10n.dart';
 
 class BreezrMainApp extends StatefulWidget {
   const BreezrMainApp({super.key});
@@ -31,7 +36,7 @@ class _BreezrMainAppState extends State<BreezrMainApp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Choose your language'),
+            Text(context.l10n.onboarding_chooseYourLanguage),
             const SizedBox(height: 16),
             Select<Language>(
               itemBuilder: (context, item) {
@@ -42,13 +47,21 @@ class _BreezrMainAppState extends State<BreezrMainApp> {
                 maxWidth: 200,
               ),
               onChanged: (value) {
+                if (!(value?.isSupportedByFlutter ?? false)) {
+                  log('language not supported by Flutter!');
+                  return;
+                }
+
                 setState(() {
                   selectedLanguage = value;
                 });
+                if (value != null) {
+                  context.read<LocaleBloc>().add(SwitchLocale(value));
+                }
               },
               value: selectedLanguage,
               placeholder: const Text('Choose your language'),
-              popup: SelectPopup(
+              popup: SelectPopup<Language>(
                 items: SelectItemList(
                   children:
                       Language.values.map((e) {
@@ -58,13 +71,12 @@ class _BreezrMainAppState extends State<BreezrMainApp> {
               ),
             ),
             const SizedBox(height: 40),
-            const Text('Permissions'),
-            const SizedBox(height: 8),
-            const Text(
-              'Breezr needs access to your file system to scan caches and '
-              'the Trash folder. macOS will ask you for permission on the next '
-              'screen.',
+            Text(
+              context.l10n.onboarding_permissionsTitle,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 8),
+            Text(context.l10n.onboarding_permissionsMsg),
             const Spacer(),
             Row(
               children: [
