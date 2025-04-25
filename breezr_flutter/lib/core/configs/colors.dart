@@ -11,23 +11,36 @@ import 'package:flutter/material.dart';
 class AppColors {
   const AppColors._();
 
-  static const Color hkWhite = Color(0xFFFFFFFF);
-  static const Color hkWhiteBackground = Color(0xFFF4F4F4);
-  static const Color hkLightBlue = Color(0xFF6497B1);
-  static const Color hkLightBlue1 = Color(0xFFB3CDE0);
-  static const Color hkBlue = Color(0xFF03396C);
-  static const Color hkBackground = Color(0xFFF0EDED);
-  static const Color hkGrey = Color(0xFF908D8D);
-  static const Color hkLightGrey = Color(0xFFD9D9D9);
-  static const Color hkBlack = Color(0xFF000000);
-  static const Color hkRed = Color(0xFFEE0F0F);
-  static const Color hkBorder = Color(0xFF333333);
-  static const Color hkGreen = Color(0xFF117908);
-  static const Color hkGreen1 = Color(0xFF34B467);
-  static const Color hkBlue1 = Color(0xFF24537C);
-  static const Color hkBlue2 = Color(0xFF1D617A);
-  static const Color hkBlack1 = Color(0xFF72777A);
-  static const Color hkPurple = Color(0xFF809BCE);
-  static const Color hkPaleGreen = Color(0xFFB8E0D4);
-  static const Color hkOrange = Color(0xFFFFA500);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color whiteBackground = Color(0xFFF7F8F9);
+  static const Color lightBlue = Color(0xFFCFE2FF);
+  static const Color winterBlue = Color(0xFF496989);
+  static const Color blue = Color(0xFF518EF8);
+  static const Color cosmeticBlue = Color(0xFF749BC2);
+  static const Color lightBackground = Color(0xFFFFFFFF);
+  static const Color altLightBackground = Color(0xFFF1F1F1);
+  static const Color grey = Color(0xFF8391A1);
+  static const Color darkGrey = Color(0xFF6A707C);
+  static const Color lightGrey = Color(0xFFD9D9D9);
+  static const Color black = Color(0xFF000000);
+  static const Color red = Color(0xFFEE0F0F);
+  static const Color border = Color(0xFFE8ECF4);
+  static const Color buttonBorder = Color(0xFF1E232C);
+  static const Color green = Color(0xFF117908);
+  static const Color lightGreen = Color(0xFF28B446);
+  static const Color lightGreen1 = Color(0xFF4ECB71);
+  static const Color orange = Color(0xFFFF9D01);
+
+  static const MaterialColor indigoPrimary = MaterialColor(0xFF4F709C, {
+    50: Color(0xFFE4F0FC),
+    100: Color(0xFFC7D8F2),
+    200: Color(0xFFA6B0E6),
+    300: Color(0xFF8588D7),
+    400: Color(0xFF6464C2),
+    500: Color(0xFF4F709C),
+    600: Color(0xFF3D5182),
+    700: Color(0xFF2B3A67),
+    800: Color(0xFF19234D),
+    900: Color(0xFF060C30),
+  });
 }

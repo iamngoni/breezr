@@ -9,6 +9,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../app/views/pages/app.dart';
 import 'route.dart';
 
 class AppRouterDelegate extends RouterDelegate<AppRoute>
@@ -40,8 +41,8 @@ class AppRouterDelegate extends RouterDelegate<AppRoute>
     final params = _currentPath?.queryParameters ?? {};
 
     final Widget page = switch (path) {
-      '/' => throw UnimplementedError(),
-      _ => throw UnimplementedError(),
+      '/' => const BreezrMainApp(),
+      _ => const BreezrMainApp(),
     };
 
     return Navigator(

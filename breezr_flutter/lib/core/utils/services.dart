@@ -7,12 +7,18 @@
 //
 
 import '../../injection.dart';
+import '../../routing/route_parser.dart';
+import '../../routing/router_delegate.dart';
 import '../services/scheduler.dart';
 import '../services/secure_storage.dart';
 import '../services/storage.dart';
 
+RouteParser $routeParser = RouteParser();
+
+AppRouterDelegate $routerDelegate = AppRouterDelegate();
+
+SchedulingService get $scheduler => getIt<SchedulingService>();
+
 SecureStorageService get $secureStorage => getIt<SecureStorageService>();
 
 StorageService get $storage => getIt<StorageService>();
-
-SchedulingService get $scheduler => getIt<SchedulingService>();
