@@ -1,4 +1,4 @@
-# 🌬️ Breezr
+# 🌬️ Breezr (WIP)
 
 **Breezr** is a fast, lightweight, and privacy-friendly system cleaning and optimization tool — built with Flutter for the UI and Rust for the core engine.
 
