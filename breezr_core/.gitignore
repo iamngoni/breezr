@@ -1,0 +1,30 @@
+# Ignore build artifacts
+/target/
+
+# Ignore generated bindings (optional, if you always regenerate)
+*.dart
+*.d.ts
+*.js
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.sw?
+
+# Backup files
+*.bak
+*.tmp
+*~
+
+# Cargo package-specific files
+Cargo.lock  # (optional: keep if you're building a library, ignore if a binary)
+
+# Rust tools
+/.cargo/
+
+# Logs
+*.log
+
+# Misc
+.DS_Store
+Thumbs.db
