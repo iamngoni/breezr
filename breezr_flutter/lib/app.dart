@@ -6,9 +6,9 @@
 //  Copyright (c) 2025 Codecraft Solutions.
 //
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ThemeData;
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:forui/forui.dart';
+import 'package:shadcn_flutter/shadcn_flutter.dart';
 
 import 'core/configs/colors.dart';
 import 'core/models/data/language.dart';
@@ -23,25 +23,14 @@ class BreezrApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LocaleBloc, Language>(
       builder: (context, state) {
-        return MaterialApp.router(
+        return ShadcnApp.router(
           title: 'Merlin World',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: AppColors.indigoPrimary,
-            scaffoldBackgroundColor: AppColors.lightBackground,
-            fontFamily: '',
-            appBarTheme: const AppBarTheme(
-              color: AppColors.lightBackground,
-              elevation: 0,
-              iconTheme: IconThemeData(color: AppColors.black),
-            ),
-          ),
+          theme: ThemeData(colorScheme: ColorSchemes.darkZinc(), radius: 0.5),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           locale: Locale(state.code),
-          builder:
-              (context, child) =>
-                  FTheme(data: FThemes.zinc.light, child: child!),
+          builder: (context, child) => child!,
           routeInformationParser: $routeParser,
           routerDelegate: $routerDelegate,
         );

@@ -11,7 +11,6 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:sentry_logging/sentry_logging.dart';
 
@@ -40,12 +39,6 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   configureInjection();
-
-  final notificationsPermission = await Permission.notification.status;
-  if (!notificationsPermission.isGranted) {
-    await Permission.notification.request();
-  }
-  log('Requesting notification permission ✅');
 
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
